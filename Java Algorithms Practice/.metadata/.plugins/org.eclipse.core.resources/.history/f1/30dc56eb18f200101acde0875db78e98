@@ -1,0 +1,27 @@
+/*
+ * (Performing set operations on array lists) Create two array lists
+ * {"George", "Jim", "Blake", "Kevin", "Michael"} and
+ * {"George", "Katie", "Kevin", "Michelle", "Ryan"} and find their union,
+ * difference, and intersection. (You may clone the lists to preserve the
+ * original lists from being changed by these methods.
+ */
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Exercise22_04 {
+
+	public static void main(String[] args) {
+		ArrayList list1 = new ArrayList(Arrays.asList("George", "Jim", "Blake",
+				"Kevin", "Michael"));
+		ArrayList list2 = new ArrayList(Arrays.asList("George", "Katie",
+				"Kevin", "Michelle", "Ryan"));
+		
+		//union
+		ArrayList union = new ArrayList(list1);
+		union.addAll(list2);
+		System.out.println("Union: " + union);
+	}
+
+}

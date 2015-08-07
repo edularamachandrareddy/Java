@@ -1,0 +1,47 @@
+/*
+ * (Performing List operations on array lists) Create two array lists
+ * {"George", "Jim", "Blake", "Kevin", "Michael"} and
+ * {"George", "Katie", "Kevin", "Michelle", "Ryan"} and find their union,
+ * difference, and intersection. (You may clone the lists to preserve the
+ * original lists from being changed by these methods.
+ */
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class Exercise22_04 {
+
+	public static <T> void testUnion(ArrayList<T> list1, ArrayList<T> list2){
+		HashSet<T> unionSet = new HashSet<T>(list1);
+		unionSet.addAll(list2);
+		ArrayList<T> unionList = new ArrayList<T>(unionSet);
+		System.out.println("Union: " + unionList);
+		
+	}
+	public static void main(String[] args) {
+		ArrayList<String> list1 = new ArrayList<String>(Arrays.asList("George", "Jim", "Blake",
+				"Kevin", "Michael"));
+		ArrayList<String> list2 = new ArrayList<String>(Arrays.asList("George", "Katie",
+				"Kevin", "Michelle", "Ryan"));
+		testUnion(list1, list2);
+		
+		//Difference
+		ArrayList<String> difference1 = new ArrayList<String>(list1);
+		difference1.removeAll(list2);
+		System.out.println("Difference 1: " + difference1);
+		ArrayList<String> difference2 = new ArrayList<String>(list2);
+		difference2.removeAll(list1);
+		System.out.println("Difference 2: " + difference2);
+		ArrayList<String> differenceList = new ArrayList<String>(difference1);
+		differenceList.addAll(difference2);
+		System.out.println("Difference List: " + differenceList);
+		
+		//Intersection
+		ArrayList<String> intersection = new ArrayList<String>(unionSet);
+		intersection.removeAll(differenceList);
+		System.out.println("Intersection List: " + intersection);
+	}
+
+}

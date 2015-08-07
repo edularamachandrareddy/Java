@@ -1,0 +1,43 @@
+/*
+ * (Displaying words in ascending alphabetical order) Write a program that
+ * reads  words from a text file and displays all the words (duplicates 
+ * allowed) in ascending alphabetical order. The text file is passed as
+ * a command-line argument.
+ */
+import java.util.*;
+import java.io.*;
+
+public class Exercise22_05 {
+
+	public static void main(String[] args) {
+		//Check for usage constrains
+		if(args.length < 1){
+			System.out.println("Usage: java Exercise22_05 FullPathFileName");
+			System.exit(0);
+		}
+		
+		//Fields
+		List<String> dictionary = new ArrayList<String>();
+		String fileName = args[0];
+		
+		try{
+			Scanner input = new Scanner(new File(fileName));
+			String line;
+			while(input.hasNext()){
+				line = input.nextLine();
+				String[] words = line.split("[ |\?|   |\n|\t|\r|.|,|)|(|-|\"]");
+				for(String s: words){
+					dictionary.add(s);
+				}
+			}
+		}
+		//filename may not exist or is miss-spelled
+		catch(Exception e){
+			System.err.println(e);
+		}
+		Collections.sort(dictionary);
+		//Display the dictionary
+		System.out.println("The words in ascending order: \n" + dictionary);
+	}
+
+}

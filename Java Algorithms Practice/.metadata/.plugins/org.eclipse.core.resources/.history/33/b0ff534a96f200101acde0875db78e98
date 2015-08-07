@@ -1,0 +1,51 @@
+/*
+ * (Storing numbers in a linked list) write a program that lets the user
+ * enter numbers from a graphical user interface and display them in a 
+ * text area, as shown below. Use a linked list to store the numbers. Do
+ * not store duplicate numbers. Add the buttons Sort, shuffle, and reverse
+ * to sort, shuffle, and reverse the list.
+ */
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.util.*;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+public class Exercise22_06 extends JFrame {
+
+	public static void main(String[] args) {
+		JFrame frame = new Exercise22_06();
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setTitle("Exercise22_06");
+		
+		JButton sort = new JButton("Sort");
+		JButton shuffle = new JButton("Shuffle");
+		JButton reverse = new JButton("Reverse");
+		
+		frame.setSize(new Dimension(680, 480));
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.add(reverse);
+		buttonPanel.add(sort);
+		buttonPanel.add(shuffle);
+		frame.setLayout(new BorderLayout());
+		frame.add(buttonPanel, BorderLayout.SOUTH);
+		
+		JPanel inputPanel = new JPanel();
+		JLabel inputLabel = new JLabel("Enter a number:");
+		JTextField inputTextField = new JTextField(30);
+		inputPanel.add(inputLabel);
+		inputPanel.add(inputTextField);
+		frame.add(inputPanel, BorderLayout.NORTH);
+		
+		JTextArea inputTextArea = new JTextArea();
+		inputTextArea.setText(inputTextField.getText());
+		frame.add(inputTextArea);
+		frame.setVisible(true);
+	}
+
+}

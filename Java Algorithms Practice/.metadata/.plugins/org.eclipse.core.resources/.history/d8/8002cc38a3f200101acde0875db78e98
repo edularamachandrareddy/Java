@@ -1,0 +1,69 @@
+/*
+ * (Counting the occurrences of numbers entered) Write a program that reads an 
+ * unspecified number of integers and finds the one that has the most occurrences.
+ * Your input ends when the input is 0. For example, if you entered 1 2 40 3 5 4 -3
+ * 3 3 2 0, the number 3 occurred the most often. Please enter one number at a time.
+ * If not one but several numbers have the most occurrences, all of them should be 
+ * reported. For example, since 9 and 3 appear twice in the list 9 30 3 9 3 2 4, both
+ * should be reported.
+ */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+import java.util.Map.Entry;
+public class Exercise22_07 {
+	
+
+	public static void main(String[] args) {
+		String input = new String();
+		int maxCount = -1;
+		TreeMap<String, Integer> numbersMap = new TreeMap<String, Integer>();
+		
+		System.out.println("Usage: Enter a number one at a time. This program will count \n" +
+				"the numbers and list the ones the appear the most.");
+		
+		InputStreamReader inputReader = new InputStreamReader(System.in);
+		BufferedReader buffReader = new BufferedReader(inputReader);
+		
+		
+		while(!input.equals("0")){
+			try {
+				input = buffReader.readLine().toString();
+//				System.out.println("Input read: " + input);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+//				e.printStackTrace();
+			}
+			
+			//Enforce input constraints
+			String[] words = input.split("[ |0|\n|\t|\r]");
+			for(String s : words){
+				if(numbersMap.get(s) != null){
+					//add the number up
+					numbersMap.put(s, numbersMap.get(s) + 1);
+					if(numbersMap.get(s) > maxCount) maxCount = numbersMap.get(s);
+//					System.out.println("Added to map");
+				}
+				else{					
+					numbersMap.put(s, 1);
+					if(numbersMap.get(s) > maxCount) maxCount = numbersMap.get(s);
+				}
+			}
+		}
+		//print out the max occurring number.
+		if(maxCount > 0){
+			
+			Set<Map.Entry<String, Integer>> entrySet = numbersMap.entrySet();
+			System.out.print("The max value(s): " );
+			for(Map.Entry<String, Integer> entry: entrySet){
+				if(entry.getValue() == maxCount){
+					System.out.print(entry.getKey() + " ");
+				}
+			}
+//			System.out.println(set);
+		}
+//		System.out.println(numbersMap);
+	}
+
+}

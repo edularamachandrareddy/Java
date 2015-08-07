@@ -1,0 +1,24 @@
+/*
+ * (Storing numbers in a linked list) write a program that lets the user
+ * enter numbers from a graphical user interface and display them in a 
+ * text area, as shown below. Use a linked list to store the numbers. Do
+ * not store duplicate numbers. Add the buttons Sort, shuffle, and reverse
+ * to sort, shuffle, and reverse the list.
+ */
+import java.awt.Frame;
+import java.util.*;
+
+import javax.swing.JButton;
+public class Exercise22_06 extends Frame {
+
+	public static void main(String[] args) {
+		Frame frame = new Exercise22_06();
+		JButton sort = new JButton("Sort");
+		JButton shuffle = new JButton("Shuffle");
+		JButton reverse = new JButton("Reverse");
+		
+		
+//		frame.add();
+	}
+
+}

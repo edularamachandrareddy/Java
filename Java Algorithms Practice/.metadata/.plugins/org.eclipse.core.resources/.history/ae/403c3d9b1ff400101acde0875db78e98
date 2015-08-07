@@ -1,0 +1,43 @@
+import java.awt.Dimension;
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+
+/*
+ * (Guessing the capital) Rewrite Exercise 9.22 so that the questions
+ * are randomly displayed.
+ 
+9.22(Guessing the capitals) Write a program that repeatedly prompts the user to enter
+a capital for a state, as shown below. Upon receiving the user input, the program
+reports whether the answer is correct. Assume that 50 states and their capitals are
+stored in a two dimensional array. The program prompts the user to answer all ten
+states' capitals and display the total correct count.
+ 
+ */
+
+// TODO Finish this exercise. Read up on pop up windows and gui stuff.
+
+public class Exercise22_11 extends JApplet{
+	
+	
+	
+	
+	//constructor
+	public Exercise22_11(){
+	
+		
+		
+	}
+
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		Exercise22_11 applet = new Exercise22_11();
+		JFrame frame = new JFrame();
+		frame.add(applet);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(new Dimension (600, 400));
+		frame.setVisible(true);
+		
+	}
+
+}

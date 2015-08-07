@@ -1,0 +1,40 @@
+
+public class Ch_01_02 {
+
+	/**
+	 * Reverse a C like string. It has a null character at the end.
+	 */
+	public static void main(String[] args) {
+
+		String test1 = "AB!";
+		System.out.println("Length of test string: " + test1.length());
+		System.out.println( "Test on " + test1 + " is now: " + cReverse(test1));
+		
+
+	}
+	
+	public static String cReverse(String s){
+		if(s.length() <= 2) return s;
+		
+		StringBuffer result = new StringBuffer();
+		int j = s.length()-2;
+		StringBuffer tempFirstHalf = new StringBuffer();
+		StringBuffer tempLastHalf = new StringBuffer();
+		for(int i= 0; i < s.length() &&  i < j; i ++){
+			
+			System.out.println("i:" + i + " j:" + j);
+			
+			tempFirstHalf.append(s.charAt(j));
+			tempLastHalf.insert(0, s.charAt(i));
+
+			System.out.println("TempFirstHalf: " + tempFirstHalf.toString());
+			System.out.println("TempLastHalf: " + tempLastHalf.toString());
+			j--;
+		}
+		result.append(tempFirstHalf);
+		result.append(tempLastHalf);
+		
+		return result.toString();
+	}
+
+}

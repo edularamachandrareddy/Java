@@ -1,0 +1,19 @@
+import java.util.Hashtable;
+
+
+public class DataScraper {
+
+	/**
+	 * @param args
+	 * http://mlai-lirik.blogspot.com/2010/04/getting-data-real-time-data.html
+	 * 
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//HashTable to store all the stock symbols and the description.
+		Hashtable<String, String> dictionary = new Hashtable<String, String>();
+
+	}
+
+}

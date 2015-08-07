@@ -1,0 +1,44 @@
+/*
+ * (Revising Listing 22_12, CountOccurrenceOfWords.java)Rewrite Listing 22.12
+ * to display the words in ascending order of occurrence counts.
+ * Hint: create a class name WordOccurence that implements the Comparable 
+ * interface. The class contains two fields, word and count. The compareTo
+ * method compares the counts. For each pair in the hash set in Listing 22.12,
+ * create an instance of WordOccurrence and store it in an array list. Sort the
+ * list using the Collections.sort method. What would be wrong if you stored
+ * the instances of WordOccurrence in a tree set?
+ */
+import java.util.*;
+public class Exercise22_08 {
+
+	public static void main(String[] args) {
+		//Set text in a string
+		String text = " Good morning. Have a good class. " +
+			"Have a good visit. Have fun!";
+		
+		//Create a TreeMap to hold the words as key and count value
+		TreeMap<String, Integer> map = new TreeMap<String, Integer>();
+		
+		String[] words = text.split("[ \n\t\r.,;:!?(){}]");
+		for (String s : words){
+			String key = s.toLowerCase();
+			if(key.length() > 0){
+				if(map.get(key) == null)
+					map.put(key, 1);
+				else{
+					int value = map.get(key).intValue();
+					value++;
+					map.put(key, value);
+				}
+			}
+		}
+		
+		//Get all entries into a set
+		Set<Map.Entry<String, Integer>> entrySet = map.entrySet();
+		
+		//Get key and value from each entry
+		for(Map.Entry<String, Integer> entry : entrySet){
+			System.out.println(entry.getValue() + "\t" + entry.getKey());
+		}
+	}
+}

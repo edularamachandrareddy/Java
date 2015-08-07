@@ -1,0 +1,25 @@
+/*
+ * (Sort points in a plane) Write a program that meets the following 
+ * requirements:
+ * 
+ * Define a class named Point with two data fields x and y to represent a
+ * point's x and y coordinates. Implement the Comparable interface for
+ * comparing the points on x-coordinates and y-coordinates if x-coordinates are
+ * identical.
+ * 
+ * Define a class named CompareY that implements Comparator<Point>. Implement the
+ * compare method to compare tow points on their y-coordinates and on their
+ * y-coordinates and on their x-coordinates if y-coordinates are identical.
+ * 
+ * Randomly create 100 points and apply the Arrays.sort method to display the
+ * points in increasing order of their x-coordinates and in increasing order of
+ * their y-coordinates, respectively.
+ */
+public class Exercise22_12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

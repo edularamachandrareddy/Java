@@ -1,0 +1,41 @@
+import java.util.HashMap;
+
+
+public class Ch_01_01 {
+
+	/*
+	 * Implement an algorithm that determines whether a certain string
+	 * had all unique characters. 
+	 */
+	
+	
+	public static void main(String[] args) {
+		String test1 = "Unique";
+		String test2 = new String();
+		String test3 = "Bob";
+		String test4 = "1";
+		String test5 = "12";
+		
+		//Add all test cases;
+		HashMap <String, Boolean> testAll = new HashMap<String, Boolean>();
+		testAll.put(test1, true);
+		testAll.put(test2, true);
+		testAll.put(test3, false);
+		testAll.put(test4, true);
+		testAll.put(test5, true);
+		
+		
+		
+		
+		
+		
+	}
+	
+	public static Boolean isUnique(String s){
+		
+		
+		return true;
+		
+	}
+
+}

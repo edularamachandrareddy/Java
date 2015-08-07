@@ -1,0 +1,21 @@
+Reverse C-Style string code project
+Code an example of poly morphism
+Graph Node problems
+Searches & Big O
+What is static
+Loops with an object with two pointers and markers.
+Iterators with each sub class in the collections framework
+Loops with iterators
+Generics
+How to read and define UML
+Software Paterns
+Memory Leaks in a given language, provide an example
+Quarturnions and you
+Jave 2D and Java 3D
+SQL Review
+Code application with database and JSP
+Understand EJBS, Springs and Struts
+
+
+Completed:
+Polymorphism, two types.
