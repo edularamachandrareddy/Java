@@ -1,0 +1,57 @@
+/*
+ *   Prime Numbers Less Than N
+ *   Complete the function getNumberOfPrimes which takes an 
+ *   integer N as its Parameter, to return the number of prime
+ *   numbers that are less than N.
+ *   Sample Testcases:
+ *   Input#00:
+ *   100
+ *   Outpu#00:
+ *   25
+ *   
+ *   1000000
+ *   78498
+ */
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+	static int getNumberOfPrimes(int n) {
+		//Definition of prime: Not divisible by a number other than itself.
+		
+		int count = 0;
+		
+		for (int i = 2; i <= n; i++) {
+			for(int j = 2; j <= i; j++){
+				System.out.println("i: "+  i +" j:"+ j +" " + (i / j));
+				if ( i / j == 1 &&i==j){
+					count++;
+					break;
+				}
+				
+			}
+		}
+		return count;
+
+	}
+
+	public static void main(String[] args) throws IOException {
+		/*
+		 * Scanner in = new Scanner(System.in); final String fileName =
+		 * System.getenv("OUTPUT_PATH"); BufferedWriter bw = new
+		 * BufferedWriter(new FileWriter(fileName)); int res; int _n; _n =
+		 * Integer.parseInt(in.nextLine());
+		 * 
+		 * res = getNumberOfPrimes(_n); bw.write(String.valueOf(res));
+		 * bw.newLine();
+		 * 
+		 * bw.close();
+		 */
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		System.out.println("Result: " + getNumberOfPrimes(n));
+	}
+}

@@ -1,0 +1,17 @@
+import java.io.*;
+import java.util.Scanner;
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt(); //3 to 2500
+        int[] input = new int[N];
+        int counter = 0;
+        while(in.hasNext()){
+            input[counter] = in.nextInt();
+            counter++;
+        }
+        
+        
+    }
+}
